@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bc-yellow: hsla(54, 92%, 60%, 1);
+    --bc-purple: hsla(241, 41%, 49%, 1);
+    --bc-blue: hsla(195, 100%, 55%, 1);
+    --bc-white: hsla(0, 20%, 92%, 1);
+    --bc-black: hsla(0, 0%, 37%, 1);
+
+    font-size: 62.5%;
+}
