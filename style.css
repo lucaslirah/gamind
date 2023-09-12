@@ -29,6 +29,12 @@ body{
     font-family: Inter, sans-serif;
 }
 #page{
+    display: grid;
+    grid-template-rows: 67px auto;
+    grid-template-areas: 
+    "header"
+    "content"
+    ;
     padding: 2rem;
 }
 button{
@@ -52,14 +58,16 @@ header{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    grid-area: header;
 }
 .header-top{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.header-top img{
-    width: 8rem;
+    >img{
+        width: 8rem;
+    }
 }
 #search-input{
     width: 10rem;
@@ -91,9 +99,9 @@ header{
     background-color: var(--bc-white);
     padding: 0.5rem;
     border-radius: 0 1rem 1rem 0;
-}
-.search-wrapper button img{
-    width: 2rem;
+    >img{
+        width: 2rem;
+    }
 }
 
 nav ul{
@@ -106,14 +114,21 @@ nav ul{
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-}
-nav ul li a{
-    color: var(--bc-black);
-    position: relative;
-    padding-bottom: 0.5rem;
+
+    >li a{
+        color: var(--bc-black);
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
 }
 
 main{
+    grid-area: content;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
     padding: 2.8rem 0;
 }
 #banner::before{
@@ -122,7 +137,7 @@ main{
     top: -3rem;
     left: -3rem;
     width: 26rem;
-    height: 14rem;
+    height: 16rem;
     background-color: var(--bc-yellow);
     border-radius: 1rem;
     z-index: -1;
@@ -134,34 +149,83 @@ main{
 
     background-color: var(--bc-purple);
     border-radius: 1rem;
-    padding: 2rem 3rem 16rem 2rem;
-
-    color: #FFF;
+    padding: 1rem 3.4rem 18rem 1.7rem;
+    margin: 3rem 1.2rem 0 3rem;
 
     position: relative;
+    
+    color: #FFF;
+    line-height: normal;
 
-    margin: 3rem 1.3rem 0 3rem;
+    >img{
+        width: 25rem;
+        z-index: 1;
+        right: -1rem;
+        bottom: 2rem;
+        position: absolute;
+    }
 }
-#banner h2{
-    font-size: 2rem;
-    font-weight: 400;
-    font-style: normal;
+#banner .banner-title{
+    >h2{
+        font-size: 2rem;
+        font-weight: 400;
+        >span{
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    }
+    >p{
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
 }
-#banner p{
-    font-size: 1.6rem;
-}
-#banner span{
-    font-weight: 700;
-}
-#banner img{
-    width: 25rem;
 
-    z-index: 1;
-    right: -1rem;
-    bottom: 2rem;
-    position: absolute;
-}
+.trending-games-title{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 3rem;
 
+    >img{
+        width: 1.5rem;
+    }
+    >h2{
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--bc-black);
+    }
+}
+.games{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+.card-games{
+    display: flex;
+    flex-direction: column;
+
+    >img{
+        width: 30rem;
+        height: 31rem;
+        object-fit: cover;
+        border-radius: 1rem 1rem 0 1rem;
+    }
+    >div{
+        width: 80%;
+        background-color: var(--bc-yellow);
+        padding: 1rem;
+
+        border-radius: 0 0 1rem 1rem;
+
+        color: black;
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+
+        align-self: flex-end;
+    }
+}
 
 .contact-ornament{
     background-color: var(--bc-purple);
