@@ -25,7 +25,7 @@
 }
 body{
     margin: 0 auto;
-
+    font-size: 1.6rem;
     font-family: Inter, sans-serif;
 }
 #page{
@@ -54,6 +54,7 @@ a{
     bottom: 0;
 }
 
+/* header */
 header{
     display: flex;
     flex-direction: column;
@@ -103,7 +104,7 @@ header{
         width: 2rem;
     }
 }
-
+/* nav */
 nav ul{
     display: flex;
     justify-content: center;
@@ -122,6 +123,7 @@ nav ul{
     }
 }
 
+/* main */
 main{
     grid-area: content;
 
@@ -131,6 +133,7 @@ main{
 
     padding: 2.8rem 0;
 }
+/* section */
 #banner::before{
     content: "";
     position: absolute;
@@ -141,6 +144,7 @@ main{
     background-color: var(--bc-yellow);
     border-radius: 1rem;
     z-index: -1;
+    box-shadow: -6px 6px 22px 0px rgba(0, 0, 0, 0.25);
 }
 #banner{
     display: flex;
@@ -149,13 +153,15 @@ main{
 
     background-color: var(--bc-purple);
     border-radius: 1rem;
-    padding: 1rem 3.4rem 18rem 1.7rem;
+    padding: 1rem 3.4rem 16rem 1.7rem;
     margin: 3rem 1.2rem 0 3rem;
 
     position: relative;
     
     color: #FFF;
     line-height: normal;
+
+    box-shadow: -6px 6px 22px 0px rgba(0, 0, 0, 0.25);
 
     >img{
         width: 25rem;
@@ -180,6 +186,7 @@ main{
     }
 }
 
+/* section */
 .trending-games-title{
     display: flex;
     align-items: center;
@@ -217,6 +224,7 @@ main{
         padding: 1rem;
 
         border-radius: 0 0 1rem 1rem;
+        box-shadow: -6px 6px 22px 0px rgba(0, 0, 0, 0.25);
 
         color: black;
         font-size: 2rem;
@@ -227,6 +235,7 @@ main{
     }
 }
 
+/* footer */
 .contact-ornament{
     background-color: var(--bc-purple);
     width: 100%;
@@ -235,7 +244,7 @@ main{
 footer{
     background-color: var(--bc-white);
     position: relative;
-    height: 12rem;
+    height: 17rem;
 
     display: flex;
     flex-direction: column;
@@ -251,8 +260,4 @@ footer{
 }
 .social-media-logos img{
     width: 2.9rem;
-}
-
-img{
-    width: 5rem;
 }
