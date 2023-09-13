@@ -24,17 +24,12 @@
     white-space: nowrap;
 }
 body{
-    margin: 0 auto;
     font-size: 1.6rem;
     font-family: Inter, sans-serif;
 }
 #page{
-    display: grid;
-    grid-template-rows: 67px auto;
-    grid-template-areas: 
-    "header"
-    "content"
-    ;
+    margin: 0 auto;
+    max-width: 1000px;
     padding: 2rem;
 }
 button{
@@ -60,7 +55,7 @@ header{
     flex-direction: column;
     gap: 2rem;
 
-    grid-area: header;
+    animation: appear-from-above 1s ease forwards;
 }
 .header-top{
     display: flex;
@@ -139,8 +134,8 @@ main{
     position: absolute;
     top: -3rem;
     left: -3rem;
-    width: 26rem;
-    height: 16rem;
+    width: clamp(20rem, 50vw, 40rem);
+    height: clamp(15rem, 30vw, 20rem);
     background-color: var(--bc-yellow);
     border-radius: 1rem;
     z-index: -1;
@@ -163,20 +158,21 @@ main{
 
     box-shadow: -6px 6px 22px 0px rgba(0, 0, 0, 0.25);
 
-    >img{
-        width: 25rem;
+    >div img{
+        width: clamp(25rem, 50%, 45rem);
         z-index: 1;
         right: -1rem;
         bottom: 2rem;
         position: absolute;
+        animation: appear-from-right 1s ease forwards;
     }
 }
 #banner .banner-title{
     >h2{
-        font-size: 2rem;
+        font-size: clamp(1rem, 5vw, 3rem);
         font-weight: 400;
         >span{
-            font-size: 2rem;
+            font-size: clamp(1rem, 5vw, 3rem);
             font-weight: 700;
         }
     }
@@ -184,9 +180,14 @@ main{
         font-size: 1.6rem;
         font-weight: 700;
     }
+    
+    animation: appear-from-above 1s ease forwards;
 }
 
 /* section */
+#trending-games{
+    animation: appear-from-below 1s ease forwards;
+}
 .trending-games-title{
     display: flex;
     align-items: center;
@@ -218,20 +219,27 @@ main{
         object-fit: cover;
         border-radius: 1rem 1rem 0 1rem;
     }
-    >div{
+    >button{
         width: 80%;
         background-color: var(--bc-yellow);
         padding: 1rem;
 
+        border: none;
         border-radius: 0 0 1rem 1rem;
         box-shadow: -6px 6px 22px 0px rgba(0, 0, 0, 0.25);
 
-        color: black;
-        font-size: 2rem;
+        font-size: clamp(1.5rem, 2vw, 1.8rem);
         font-weight: 600;
-        text-align: center;
+        text-align: left;
+        color: black;
 
         align-self: flex-end;
+
+        transition: all 0.5s;
+    }
+    >button:hover{
+        color: #FFF;
+        background-color: var(--bc-purple);
     }
 }
 
@@ -260,4 +268,53 @@ footer{
 }
 .social-media-logos img{
     width: 2.9rem;
+}
+
+/* media queries */
+@media (min-width: 710px){
+    #banner{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 3.4rem 8rem 1.7rem;
+
+        >.banner-title{
+            width: clamp(35rem, 10vw, 50rem);
+        }
+    }
+    .games{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+}
+@keyframes appear-from-right{
+    from{
+        filter: opacity(0);
+        transform: translateX(30px);
+    }
+    to{
+        filter: opacity(1);
+        transform: translateX(0);
+    }
+}
+@keyframes appear-from-below{
+    from{
+        filter: opacity(0);
+        transform: translateY(30px);
+    }
+    to{
+        filter: opacity(1);
+        transform: translateY(0);
+    }
+}
+@keyframes appear-from-above{
+    from{
+        filter: opacity(0);
+        transform: translateY(-30px);
+    }
+    to{
+        filter: opacity(1);
+        transform: translateY(0);
+    }
 }
