@@ -61,10 +61,11 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    >img{
-        width: 8rem;
-    }
 }
+.header-top img{
+    width: 8rem;
+}
+
 #search-input{
     width: 10rem;
     padding: 0.5rem 1rem;
@@ -95,10 +96,11 @@ header{
     background-color: var(--bc-white);
     padding: 0.5rem;
     border-radius: 0 1rem 1rem 0;
-    >img{
-        width: 2rem;
-    }
 }
+.search-wrapper img{
+    width: 2rem;
+}
+
 /* nav */
 nav ul{
     display: flex;
@@ -110,12 +112,11 @@ nav ul{
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-
-    >li a{
-        color: var(--bc-black);
-        position: relative;
-        padding-bottom: 0.5rem;
-    }
+}
+nav ul li a{
+    color: var(--bc-black);
+    position: relative;
+    padding-bottom: 0.5rem;
 }
 
 /* main */
@@ -157,31 +158,29 @@ main{
     line-height: normal;
 
     box-shadow: -6px 6px 22px 0px rgba(0, 0, 0, 0.25);
-
-    >div img{
-        width: clamp(25rem, 50%, 45rem);
-        z-index: 1;
-        right: -1rem;
-        bottom: 2rem;
-        position: absolute;
-        animation: appear-from-right 1s ease forwards;
-    }
 }
-#banner .banner-title{
-    >h2{
-        font-size: clamp(1rem, 5vw, 3rem);
-        font-weight: 400;
-        >span{
-            font-size: clamp(1rem, 5vw, 3rem);
-            font-weight: 700;
-        }
-    }
-    >p{
-        font-size: 1.6rem;
-        font-weight: 700;
-    }
-    
+#banner div img{
+    width: clamp(25rem, 50%, 45rem);
+    z-index: 1;
+    right: -1rem;
+    bottom: 2rem;
+    position: absolute;
+    animation: appear-from-right 1s ease forwards;
+}
+#banner .banner-title{    
     animation: appear-from-above 1s ease forwards;
+}
+.banner-title h3{
+    font-size: clamp(1rem, 5vw, 3rem);
+    font-weight: 400;
+}
+.banner-title  h3 span{
+    font-size: clamp(1rem, 5vw, 3rem);
+    font-weight: 700;
+}
+.banner-title p{
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
 /* section */
@@ -193,16 +192,16 @@ main{
     align-items: center;
     gap: 2px;
     margin-bottom: 3rem;
-
-    >img{
-        width: 1.5rem;
-    }
-    >h2{
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--bc-black);
-    }
 }
+.trending-games-title img{
+    width: 1.5rem;
+}
+.trending-games-title h2{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--bc-black);
+}
+
 .games{
     display: flex;
     flex-direction: column;
@@ -212,35 +211,34 @@ main{
 .card-games{
     display: flex;
     flex-direction: column;
+}
+.card-games button{
+    width: 80%;
+    background-color: var(--bc-yellow);
+    padding: 1rem;
 
-    >img{
-        width: 30rem;
-        height: 31rem;
-        object-fit: cover;
-        border-radius: 1rem 1rem 0 1rem;
-    }
-    >button{
-        width: 80%;
-        background-color: var(--bc-yellow);
-        padding: 1rem;
+    border: none;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: -6px 6px 22px 0px rgba(0, 0, 0, 0.25);
 
-        border: none;
-        border-radius: 0 0 1rem 1rem;
-        box-shadow: -6px 6px 22px 0px rgba(0, 0, 0, 0.25);
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    font-weight: 600;
+    text-align: left;
+    color: black;
 
-        font-size: clamp(1.5rem, 2vw, 1.8rem);
-        font-weight: 600;
-        text-align: left;
-        color: black;
+    align-self: flex-end;
 
-        align-self: flex-end;
-
-        transition: all 0.5s;
-    }
-    >button:hover{
-        color: #FFF;
-        background-color: var(--bc-purple);
-    }
+    transition: all 0.5s;
+}
+.card-games button:hover{
+    color: #FFF;
+    background-color: var(--bc-purple);
+}
+.card-games img{
+    width: 30rem;
+    height: 31rem;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 1rem;
 }
 
 /* footer */
@@ -277,10 +275,9 @@ footer{
         flex-direction: row;
         justify-content: space-between;
         padding: 1rem 3.4rem 8rem 1.7rem;
-
-        >.banner-title{
-            width: clamp(35rem, 10vw, 50rem);
-        }
+    }
+    .banner-title{
+        width: clamp(35rem, 10vw, 50rem);
     }
     .games{
         display:grid;
